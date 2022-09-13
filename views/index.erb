@@ -1,1 +1,41 @@
-<h1>hello world</h1>
+<h1>Home Maintenance</h1>
+
+<% if logged_in?%>
+  <h2>Welcome, <%= current_user['first_name'] %>!</h2>
+
+  <section class="controls">
+    <form action="/sessions" method="POST">
+      <input type="hidden" name="_method" value="delete"> 
+      <button>Logout</button>
+    </form>
+
+    <a href="/work_orders/new">Add work_order item</a>
+  </section>
+
+  <section class="work_orders">
+    <% work_orders.each do |work_order| %>
+      <section class="work_order">
+        <header>
+          <h2><%= work_order['name'] %></h2>
+          
+
+          <p><%= work_order['description'] %></p>
+
+          <section class="controls">
+            <a href="/work_orders/<%= work_order['id'] %>/edit">Edit</a>
+
+            <form action="/work_orders/<%= work_order['id'] %>" method="POST">
+              <input type="hidden" name="_method" value="delete">
+              <button>Delete</button>
+            </form>
+          </section>
+        </header>
+
+        <img src="<%= work_order['image_url'] %>" alt="">
+      </section>
+    <% end %>
+  </section>
+<% else %>
+  <a href="/sessions/new">Login</a>
+  <a href="/users/new">Sign up</a>
+<% end %>
