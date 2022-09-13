@@ -11,11 +11,9 @@ post '/work_orders' do
   
     create_work_order(name, description, image_url)
   
-    # if the request is NOT a GET request, then we must redirect instead of using erb.
     redirect '/'
 end
   
-# the :id is a route parameter
 get '/work_orders/:id/edit' do
     id = params['id']
     work_order = get_work_order(id)
