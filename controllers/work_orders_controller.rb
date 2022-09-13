@@ -6,9 +6,10 @@ end
   
 post '/work_orders' do
     name = params['name']
+    description = params['description']
     image_url = params['image_url']
   
-    create_work_order(name, image_url)
+    create_work_order(name, description, image_url)
   
     # if the request is NOT a GET request, then we must redirect instead of using erb.
     redirect '/'
