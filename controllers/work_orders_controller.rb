@@ -2,7 +2,6 @@ require './models/work_order'
 
 
 get '/quotes/home' do 
-    all_work_orders = all_work_orders()
     client_work_orders = client_work_orders(session['user_id'])
 
     redirect = redirect
@@ -19,13 +18,27 @@ get '/work_orders/new' do
 end
   
 post '/work_orders' do
-    name = params['name']
-    description = params['description']
-    image_url = params['image_url']
-  
+    if params['name'] == ''
+        then name = 'Generic enquiry'
+    else
+        name = params['name']
+    end
+
+    if params['description'] == ''
+        then description = 'No description'
+    else
+        description = params['description']
+    end
+
+    if params['image_url'] == ''
+        then image_url = 'https://www.feelinggoodinstitute.com/public/gallery/NoImageAvailableIcon.png'
+    else
+        image_url = params['image_url']
+    end
+
     create_work_order(name, description, image_url)
   
-    redirect '/'
+    redirect '/quotes/home'
 end
   
 get '/work_orders/:id/edit' do
@@ -43,12 +56,13 @@ put '/work_orders/:id' do
     image_url = params['image_url']
   
     update_work_order(id, name, image_url)
-    redirect '/'
+    redirect '/quotes/home'
 end
   
 delete '/work_orders/:id' do
     id = params['id']
     
     delete_work_order(id)
-    redirect '/'
+    redirect '/quotes/home'
 end
+

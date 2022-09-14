@@ -1,0 +1,12 @@
+<h1>Edit enquiry</h1>
+<form action="/work_orders/<%= work_order['id'] %>" method="POST">
+    <input type="hidden" name="_method" value="put">
+
+    <label for="">name: </label>
+    <input type="text" name="name" value="<%= work_order['name']%>">
+
+    <label for="">Image URL: </label>
+    <input type="text" name="image_url" value="<%= work_order['image_url']%>">
+
+    <button>Update work_order</button>
+</form>

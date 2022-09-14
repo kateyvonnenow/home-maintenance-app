@@ -8,7 +8,7 @@ end
 
 # Client enquiring about job
 def create_work_order(name, description, image_url)
-    run_sql("INSERT INTO work_orders(name, description, image_url, job_status, client_id) VALUES($1, $2, $3, 'waiting', #{session['user_id']})", [name, description, image_url])
+    run_sql("INSERT INTO work_orders(name, description, image_url, job_status, client_id) VALUES($1, $2, $3, 'QUEUED', #{session['user_id']})", [name, description, image_url])
 end
 
 def get_work_order(id)

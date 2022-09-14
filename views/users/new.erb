@@ -1,20 +1,54 @@
-<h1>Sign up</h1>
-<form action="/users" method="POST">
-    <label for="">First Name</label>
-    <input type="text" name="first_name">
-    <br>
+<div class="nav">
+  <img src="https://i.imgur.com/1eT9WvY.png" alt="" id="logo">
+  <ul id="item">
+    <li><a href="/">Home</a></li>
+    <li><a href="/sessions/new">Login</a></li>
+  </ul>
+</div>
 
-    <label for="">Last Name</label>
-    <input type="text" name="last_name">
-    <br>
+<div class="back_login">
+  <div class="overlay"></div>
+</div>
 
-    <label for="">Email:</label>
-    <input type="text" name="email">
-    <br>
+<div class="mid mid_login sign_up">
+    <h1>Sign up</h1>
+    <form action="/users" method="POST" class="form log_in">
+        <div class="field one">
+            <label for="">First Name</label>
+            <input type="text" name="first_name">
+        </div>
+        
+        <div class="field two">
+            <label for="">Last Name</label>
+            <input type="text" name="last_name">
+        </div>
 
-    <label for="">Password:</label>
-    <input type="password" name="password">
-    <br>
+        <div class="field three">
+            <label for="">Email:</label>
+            <input type="text" name="email">
+        </div>
 
-    <button>Sign up</button>
-</form>
+        <div class="field four">
+            <label for="">Password:</label>
+            <input type="password" name="password">
+        </div>
+        
+        <button>Sign Up</button>
+    </form>
+</div>
+
+<div class="details">
+  <div class="one">
+    <h3>Who we are</h3>
+    <h6>Your local South Aussie handyman.</h6>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, molestias voluptatum quia accusantium rerum ad maxime ut sequi soluta, error a architecto sed exercitationem? Eveniet quod illum dolore sed laborum.</p>
+    <a href="#">Get a quote</a>
+  </div>
+
+  <div class="two">
+    <h3>Contact hours</h3>
+    <h5>Sunday: Closed</h5>
+    <h5>Monday - Friday</h5>
+    <p>9:00am - 6:00pm</p>
+  </div>
+</div>

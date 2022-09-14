@@ -16,10 +16,9 @@
   </div>
 
   <div class="mid mid_login">
-    <h1 class="main">Welcome to your profile, <%= current_user['first_name'] %>!</h1>
-    <p>Here, you can manage all the enquiries you have made with us online! Whatever you need done, no job is too big or too small.</p>
+    <h1 class="main">Admin: <%= current_user['first_name'] %></h1>
+    <p>This page is to manage all client enquiries</p>
     <br>
-    <p>So what goals do you want to achieve?</p>
   </div>
 
   <div class="details">
@@ -39,16 +38,16 @@
     <div class="one">
       <h3>Directory of enquiries</h3>
       <ul class="work_order_dir">
-      <% client_work_orders.each do |work_order| %>
+      <% all_work_orders.each do |work_order| %>
         <li><a href="#<%= work_order['name'] %>" class="work_orders_list"><%= work_order['name'] %></a></li>
       <% end %>
       </ul>
     </div>
 
     <div class="two">
-    <h1>Your Enquiries</h1>
-    <% if client_work_orders.to_a.length > 0 %>
-      <% client_work_orders.each do |work_order| %>
+    <h1>Client Enquiries</h1>
+    <% if all_work_orders.to_a.length > 0 %>
+      <% all_work_orders.each do |work_order| %>
         <div id="<% work_order['name'].to_s %>" class="work_order_preview">
           <h2><%= work_order['name'] %></h2>
           <p>Status: <%= work_order['job_status'] %></p>

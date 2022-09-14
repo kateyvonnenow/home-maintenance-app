@@ -1,13 +1,52 @@
-<h1>Enquire about your home maintenance need</h1>
-<form action="/work_orders" method="POST">
-    <label for="">Name: </label>
-    <input type="text" name="name">
+<% if logged_in?%>
+    <div class="nav create_enquiry_nav">
+        <img src="https://i.imgur.com/1eT9WvY.png" alt="" id="logo">
+        <ul id="item">
+            <li><a href="/">Home</a></li>
+            
+            <form action="/sessions" method="POST">
+                <input type="hidden" name="_method" value="delete"> 
+                <button>Logout</button>
+            </form>
+        </ul>
+    </div>
 
-    <label for="">Description: </label>
-    <input type="text" name="description">
+  <div class="back_login">
+    <div></div>
+  </div>
 
-    <label for="">Image URL: </label>
-    <input type="text" name="image_url">
+  <div id="create_enquiry_mid" class="mid mid_login">
+    <h1 id="create_enquiry_title" class="main">Create enquiry</h1>
+    <form action="/work_orders" method="POST" class="form create_enquiry">
+        <div class="field one">
+            <label for="">Enquiry Title: </label>
+            <input type="text" name="name">
+        </div>
 
-    <button>Enquire Job</button>
-</form>
+        <div class="field two">
+                <label for="">Description: </label>
+                <textarea name="description" id="" cols="50" rows="20"></textarea>
+            </div>
+        
+        <div class="field three">
+            <label for="">Image URL: </label>
+            <input type="text" name="image_url">
+        </div>
+        
+        <button>Submit</button>
+    </form>
+  </div>
+
+  <div class="details details_create_enquiry">
+    <div class="one">
+        <h3>How does it work?</h3>
+        <h6>We keep track of the enquiries you make and you get to see each stage of the job process from beginning through to the end. Upon submitting an enquiry, it is automatically placed in queue for the quoting phase. Users can edit enquiries within this phase prior to finalising on an agreed quote. After quotes are finalised, enquiries then enter the processing stage where users can no longer edit their enquiries as the job is now in queue for scheduling and completion.</h6>
+    </div>
+
+    <div class="two">
+      
+    </div>
+  </div>
+<% else %>
+  <% redirect '/' %>
+<% end %>

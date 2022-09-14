@@ -188,11 +188,30 @@ header {
     color: #fff;
     background: #0174b7;
     padding: 1rem;
+    text-decoration: none;
 }
     
-
 .details .two {
     width: 45%;
+}
+
+.details_create_enquiry {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 8rem 10rem;
+    background: #0174b7;
+}
+
+.create_new_enquiry {
+    display: grid;
+    width: 100%;
+}
+
+.create_new_enquiry .field {
+    width: 100%;
 }
 
 .mid .form {
@@ -228,6 +247,19 @@ header {
     background-color: #478fb9;
 }
 
+.mid .create_enquiry {
+    margin: auto;
+    min-width: 100%;
+}
+
+#create_enquiry_title {
+    padding-top: 40%;
+}
+
+#create_enquiry_mid {
+    min-width: 50%;
+}
+
 #login_fail {
     color: rgb(158, 37, 37);
 }
@@ -236,6 +268,50 @@ header {
     width: 300px;
     height: 300px;
     object-fit: cover;
+}
+
+.sign_up {
+    margin-top: 10%;
+}
+
+.enquiries {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    align-items: baseline; 
+    padding: 8rem 10rem;
+}
+
+.enquiries .one {
+    width: 30%;
+}
+
+.enquiries .one .work_order_dir .work_orders_list {
+    text-decoration: none;
+    color: #0174b7;
+    font-family: 'Roboto';
+}
+
+.enquiries .one .work_order_dir .work_orders_list:hover {
+    color: #478fb9;
+}
+
+.enquiries .one .work_order_dir li {
+    list-style: none;
+}
+
+.enquiries .two {
+    width: 60%;
+}
+
+.enquiries .two h1{
+    padding: 30px 0px;
+}
+
+
+.work_order_preview {
+    padding-bottom: 10%;
 }
 
 
