@@ -25,3 +25,10 @@ ALTER TABLE users ADD COLUMN admin BOOLEAN;
 ALTER TABLE work_orders ADD COLUMN job_status TEXT;
 
 UPDATE work_orders SET job_status = 'waiting' WHERE id = 1;
+
+ALTER TABLE work_orders ALTER COLUMN client_id TYPE NUMERIC USING client_id::NUMERIC;
+
+DELETE FROM work_orders WHERE id = 4;
+
+SELECT * FROM work_orders WHERE client_id = 1 ORDER BY id
+

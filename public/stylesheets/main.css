@@ -1,0 +1,67 @@
+body {
+    display: grid;
+    margin: auto;
+    margin left
+    justify-content: center;
+    background-image: url('https://i.imgur.com/dtbOMTt.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    /* color: white; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    display: grid;
+    margin: auto;
+    margin-top: 20%;
+    justify-content: center;
+    color: white;
+}
+
+.logo {
+    max-width: 30%;
+    margin: auto;
+}
+
+.main {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* color: #0174b7; */
+    text-align: center  ;
+}
+
+nav {
+    display: flex;
+    margin: auto;
+    gap: 1rem;
+}
+
+a {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0174b7;
+    font-weight: bold;
+}
+
+.about_us {
+    margin: auto;
+    margin-top: 30%;
+    max-width: 100%;
+    padding: 10% 20% 0 20%;
+    background-color: white;
+}
+
+.about_us h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #0174b7;
+    font-size: 3rem;
+}
+
+.about_us p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+

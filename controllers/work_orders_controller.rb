@@ -1,5 +1,5 @@
 require './models/work_order'
-  
+
 get '/work_orders/new' do
     erb :'work_orders/new'
 end

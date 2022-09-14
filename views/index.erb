@@ -1,4 +1,7 @@
-<h1>Home Maintenance</h1>
+<header>
+  <img src="https://i.imgur.com/LnVAmI0.png" alt="" class="logo">
+  <h1 class="main">IN LIGHT Home Maintenance</h1>
+</header>
 
 <% if logged_in?%>
   <h2>Welcome, <%= current_user['first_name'] %>!</h2>
@@ -13,12 +16,11 @@
   </section>
 
   <section class="work_orders">
-    <% work_orders.each do |work_order| %>
+    <% client_work_orders.each do |work_order| %>
       <section class="work_order">
         <header>
           <h2><%= work_order['name'] %></h2>
           
-
           <p><%= work_order['description'] %></p>
 
           <section class="controls">
@@ -36,6 +38,15 @@
     <% end %>
   </section>
 <% else %>
+<nav>
   <a href="/sessions/new">Login</a>
   <a href="/users/new">Sign up</a>
+</nav>
+<section class="about_us">
+  <h1>About Us</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt enim quasi harum, atque officia architecto quo ipsam adipisci et corrupti vitae cum repellat maxime fuga perferendis. Maiores eligendi tempore et.</p>
+
+</section>
+  
+  
 <% end %>

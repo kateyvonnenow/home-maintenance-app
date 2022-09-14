@@ -2,9 +2,13 @@ def all_work_orders
     run_sql("SELECT * FROM work_orders ORDER BY id")
 end
 
+def client_work_orders(session_id)
+    run_sql("SELECT * FROM work_orders WHERE client_id = $1 ORDER BY id", [session_id])
+end
+
 # Client enquiring about job
 def create_work_order(name, description, image_url)
-    run_sql("INSERT INTO work_orders(name, description, image_url, job_status) VALUES($1, $2, $3, 'waiting')", [name, description, image_url])
+    run_sql("INSERT INTO work_orders(name, description, image_url, job_status, client_id) VALUES($1, $2, $3, 'waiting', #{session['user_id']})", [name, description, image_url])
 end
 
 def get_work_order(id)

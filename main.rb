@@ -5,10 +5,12 @@ require './db/db'
 enable :sessions
 
 get '/' do
-  work_orders = all_work_orders()
+  all_work_orders = all_work_orders()
+  client_work_orders = client_work_orders(session['user_id'])
 
   erb :index, locals: {
-      work_orders: work_orders
+      all_work_orders: all_work_orders,
+      client_work_orders: client_work_orders
   }
 end
 
