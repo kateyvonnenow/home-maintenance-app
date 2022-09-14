@@ -1,12 +1,47 @@
-<h1>Login</h1>
+<div class="nav">
+  <img src="https://i.imgur.com/1eT9WvY.png" alt="" id="logo">
+  <ul id="item">
+    <li><a href="/">Home</a></li>
+    <li><a href="/users/new">Sign up</a></li>
+  </ul>
+</div>
 
-<form action="/sessions" method="POST">
-<label for="">Email:</label>
-<input type="text" name="email">
+<div class="back_login">
+  <div class="overlay"></div>
+</div>
 
-<label for="">Password:</label>
-<input type="password" name="password">
-Login Failed. 
+<div class="mid mid_login">
+    <h1>Login</h1>
+    <form action="/sessions" method="POST" class="form log_in">
+        <div class="field one">
+            <label for="">Email:</label>
+            <input type="text" name="email">
+        </div>
+        
+        <div class="field two">
+            <label for="">Password:</label>
+            <input type="password" name="password">
+        </div>
+        
+        <button>Log in</button>
+    </form>
+    <br>
+    <span id="login_fail">Login failed. Try again.</span>
+    
+</div>
 
-<button>Log in</button>
-</form>
+<div class="details">
+  <div class="one">
+    <h3>Who we are</h3>
+    <h6>Your local South Aussie handyman.</h6>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, molestias voluptatum quia accusantium rerum ad maxime ut sequi soluta, error a architecto sed exercitationem? Eveniet quod illum dolore sed laborum.</p>
+    <a href="#">Get a quote</a>
+  </div>
+
+  <div class="two">
+    <h3>Contact hours</h3>
+    <h5>Sunday: Closed</h5>
+    <h5>Monday - Friday</h5>
+    <p>9:00am - 6:00pm</p>
+  </div>
+</div>
