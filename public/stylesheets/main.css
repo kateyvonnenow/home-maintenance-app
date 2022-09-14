@@ -1,13 +1,17 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: grid;
     margin: auto;
-    margin left
     justify-content: center;
-    background-image: url('https://i.imgur.com/dtbOMTt.jpg');
+    background-color: #fff;
     background-size: cover;
     background-attachment: fixed;
     /* color: white; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto';
+    color: black;
 }
 
 header {
@@ -18,50 +22,161 @@ header {
     color: white;
 }
 
+#logo {
+    max-width: 150px;
+}
+
 .logo {
-    max-width: 30%;
+    max-width: 60%;
     margin: auto;
 }
 
 .main {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: 'Roboto'; */
     /* color: #0174b7; */
     text-align: center  ;
 }
 
-nav {
+.nav {
     display: flex;
-    margin: auto;
-    gap: 1rem;
-}
-
-a {
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #0174b7;
-    font-weight: bold;
-}
-
-.about_us {
-    margin: auto;
-    margin-top: 30%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     max-width: 100%;
-    padding: 10% 20% 0 20%;
-    background-color: white;
+    padding: 1rem 6.5rem;
+    background: #222;
+    z-index: 100000;
 }
 
-.about_us h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+#item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#item li {
+    list-style: none;
+    padding-right: 50px;
+}
+
+#item a {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    transition: 0.2s;
+    text-transform: uppercase;
+}
+
+#item a:hover {
     color: #0174b7;
-    font-size: 3rem;
 }
 
-.about_us p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.back {
+    background-image: url('https://i.imgur.com/dtbOMTt.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
 }
+
+/* .back .overlay {
+    background: #171819;
+    width: 100%;
+    height: 100%;
+} */
+
+.mid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.mid p {
+    color: #b2b2b2;
+    font-size: 1.3rem;
+}
+
+.mid .btn {
+    margin-top: 3rem;
+    gap: 2rem;
+}
+
+.mid .btn a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.mid .btn a.simple {
+    color: #fff;
+    font-weight: 500;
+    padding: 0.9rem 1.6rem;
+    transition: 0.2s;
+}
+
+.mid .btn a.simple:hover {
+    color: #0174b7;
+}
+
+.mid .btn a.border {
+    color: #0174b7;
+    border: 1px solid #0174b7;
+    font-weight: 500;
+    padding: 0.9rem 1.6rem;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.mid .btn a.border:hover {
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+.details {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 8rem 10rem;
+    background: #171819;
+}
+
+.details h3,h6,h5 {
+    color: #fff;
+}
+
+.details .one {
+    width: 45%;
+}
+
+.details .one h3{
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+.details .one h6{
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+.details .one p{
+    color: #666262;
+    font-size: 1.2rem;
+    padding-bottom: 3rem;
+}
+    
+
+.details .two {
+    width: 45%;
+}
+
+
+
+
+
 
 
