@@ -34,8 +34,8 @@
     </div>
   </div>
 
-<div class="enquiries">
-  
+  <div class="enquiries">
+
     <div class="one">
       <h3>Directory of enquiries</h3>
       <ul class="work_order_dir">
@@ -51,12 +51,6 @@
       <% client_work_orders.each do |work_order| %>
         <div id="<% work_order['name'].to_s %>" class="work_order_preview">
           <h2><%= work_order['name'] %></h2>
-          <p>Status: <%= work_order['job_status'] %></p>
-
-          <div class="work_order_detail">
-            <p><%= work_order['description'] %></p>
-            <img src="<%= work_order['image_url'] %>" alt="" class="attachments">
-          </div>
           
           <section class="controls">
             <a href="/work_orders/<%= work_order['id'] %>/edit">Edit Enquiry</a>
@@ -65,6 +59,14 @@
               <button>Delete</button>
             </form>
           </section>
+
+          <p>Status: <%= work_order['job_status'] %></p>
+
+          <div class="work_order_detail">
+            <p><%= work_order['description'] %></p>
+            <img src="<%= work_order['image_url'] %>" alt="" class="attachments">
+          </div>
+          <hr>
         </div>
       <% end %>
       <% else %>

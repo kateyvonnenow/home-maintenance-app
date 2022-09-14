@@ -1,76 +1,84 @@
 <% if logged_in?%>
-  <div class="nav">
-    <img src="https://i.imgur.com/1eT9WvY.png" alt="" id="logo">
-    <ul id="item">
-      <li><a href="/">Home</a></li>
-      
-      <form action="/sessions" method="POST">
-          <input type="hidden" name="_method" value="delete"> 
-          <button>Logout</button>
-        </form>
-    </ul>
-  </div>
-
-  <div class="back_login">
-    <div></div>
-  </div>
-
-  <div class="mid mid_login">
-    <h1 class="main">Admin: <%= current_user['first_name'] %></h1>
-    <p>This page is to manage all client enquiries</p>
-    <br>
-  </div>
-
-  <div class="details">
-    <div class="one">
-      <h3>Enquiries</h3>
-      <h6>Submit a live enquiry that tracks every stage of the job for you. Beginning from the moment you click submit, until the moment the job is fixed.</h6>
-      <a href="/work_orders/new">Create Enquiry</a>
-    </div>
-
-    <div class="two">
-      
-    </div>
-  </div>
-
-<div class="enquiries">
-  
-    <div class="one">
-      <h3>Directory of enquiries</h3>
-      <ul class="work_order_dir">
-      <% all_work_orders.each do |work_order| %>
-        <li><a href="#<%= work_order['name'] %>" class="work_orders_list"><%= work_order['name'] %></a></li>
-      <% end %>
-      </ul>
-    </div>
-
-    <div class="two">
-    <h1>Client Enquiries</h1>
-    <% if all_work_orders.to_a.length > 0 %>
-      <% all_work_orders.each do |work_order| %>
-        <div id="<% work_order['name'].to_s %>" class="work_order_preview">
-          <h2><%= work_order['name'] %></h2>
-          <p>Status: <%= work_order['job_status'] %></p>
-
-          <div class="work_order_detail">
-            <p><%= work_order['description'] %></p>
-            <img src="<%= work_order['image_url'] %>" alt="" class="attachments">
-          </div>
-          
-          <section class="controls">
-            <a href="/work_orders/<%= work_order['id'] %>/edit">Edit Enquiry</a>
-            <form action="/work_orders/<%= work_order['id'] %>" method="POST">
-              <input type="hidden" name="_method" value="delete">
-              <button>Delete</button>
+    <div class="nav">
+        <img src="https://i.imgur.com/1eT9WvY.png" alt="" id="logo">
+        <ul id="item">
+        <li><a href="/">Home</a></li>
+        
+        <form action="/sessions" method="POST">
+            <input type="hidden" name="_method" value="delete"> 
+            <button>Logout</button>
             </form>
-          </section>
-        </div>
-      <% end %>
-      <% else %>
-        <p>No current enquiries. Create one to preview.</p>
-      <% end %>
+        </ul>
     </div>
-  </div>
+
+    <div class="back_login">
+        <div></div>
+    </div>
+
+    <div class="mid mid_login">
+        <h1 class="main">Admin: <%= current_user['first_name'] %></h1>
+        <p>This page is to manage all client enquiries</p>
+        <br>
+    </div>
+
+    <div class="details">
+        <div class="one">
+        <h3>Enquiries</h3>
+        <h6>Submit a live enquiry that tracks every stage of the job for you. Beginning from the moment you click submit, until the moment the job is fixed.</h6>
+        <a href="/work_orders/new">Create Enquiry</a>
+        </div>
+
+        <div class="two">
+        
+        </div>
+    </div>
+
+    <div class="enquiries">
+    
+        <div class="one">
+            <h3>Directory of enquiries</h3>
+            <ul class="work_order_dir">
+            <% all_work_orders.each do |work_order| %>
+                <li><a href="#<%= work_order['name'] %>" class="work_orders_list"><%= work_order['name'] %></a></li>
+            <% end %>
+            </ul>
+        </div>
+
+        <div class="two">
+            <h1>Client Enquiries</h1>
+            <% if all_work_orders.to_a.length > 0 %>
+                <% all_work_orders.each do |work_order| %>
+                    <div id="<% work_order['name'].to_s %>" class="work_order_preview">
+                        <h2><%= work_order['name'] %></h2>
+
+                        <section class="controls">
+                            <a href="/work_orders/<%= work_order['id'] %>/edit">Edit Enquiry</a>
+                            <form action="/work_orders/<%= work_order['id'] %>" method="POST">
+                                <input type="hidden" name="_method" value="delete">
+                                <button>Delete</button>
+                            </form>
+                        </section>
+
+                        <p>Status: <%= work_order['job_status'] %></p>
+
+                        <% all_users.each do |user| %>
+                            <% if user['id'] == work_order['client_id'] %>
+                                <p>Client: <%= user['first_name'] %> <%= user['last_name'] %></p>
+                            <% end %>
+                        <% end %>
+
+                        <div class="work_order_detail">
+                            <p><%= work_order['description'] %></p>
+                            <img src="<%= work_order['image_url'] %>" alt="" class="attachments">
+                        </div>
+                        <hr>
+                    </div>
+                <% end %>
+            <% else %>
+                <p>No current enquiries. Create one to preview.</p>
+            <% end %>
+        </div>
+    </div>
 <% else %>
   <% redirect '/' %>
 <% end %>

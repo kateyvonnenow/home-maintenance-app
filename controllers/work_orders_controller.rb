@@ -56,6 +56,7 @@ put '/work_orders/:id' do
     image_url = params['image_url']
   
     update_work_order(id, name, image_url)
+
     redirect '/quotes/home'
 end
   

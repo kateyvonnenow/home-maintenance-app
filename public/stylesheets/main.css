@@ -193,6 +193,12 @@ header {
     
 .details .two {
     width: 45%;
+    border-left: 1px solid #fff;
+    padding-left: 5%;
+}
+
+.details .two p{
+    color: #fff;
 }
 
 .details_create_enquiry {
@@ -303,15 +309,46 @@ header {
 
 .enquiries .two {
     width: 60%;
+    border-left: 1px solid black;
+    padding-left: 10%;
 }
 
 .enquiries .two h1{
     padding: 30px 0px;
 }
 
+.controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.controls a {
+    text-decoration: none;
+    color: #0174b7;
+    background: none;
+    border: #222;
+}
+
+.controls button {
+    padding: 0.5rem;
+    color: #fff;
+    background-color: #0174b7;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
 
 .work_order_preview {
     padding-bottom: 10%;
+}
+.nav button {
+    padding: 1rem;
+    color: #fff;
+    background-color: #0174b7;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
 }
 
 
