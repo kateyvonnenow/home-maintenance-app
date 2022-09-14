@@ -13,7 +13,7 @@ post '/sessions' do
     if user && BCrypt::Password.new(user['password_digest']) == password
         session['user_id'] = user['id']
 
-        redirect '/'
+        redirect '/quotes/home'
     else
         erb :'sessions/retry'
     end

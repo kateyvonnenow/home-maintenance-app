@@ -1,5 +1,19 @@
 require './models/work_order'
 
+
+get '/quotes/home' do 
+    all_work_orders = all_work_orders()
+    client_work_orders = client_work_orders(session['user_id'])
+
+    redirect = redirect
+  
+    erb :'work_orders/quotes_page', locals: {
+        all_work_orders: all_work_orders,
+        client_work_orders: client_work_orders,
+        redirect: redirect
+    }
+end
+
 get '/work_orders/new' do
     erb :'work_orders/new'
 end

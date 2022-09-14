@@ -1,37 +1,45 @@
 <% if logged_in?%>
-  <h2>Welcome, <%= current_user['first_name'] %>!</h2>
-
-  <section class="controls">
+  <div class="nav">
+  <img src="https://i.imgur.com/1eT9WvY.png" alt="" id="logo">
+  <ul id="item">
+    <li><a href="/quotes/home">online profile</a></li>
+    
     <form action="/sessions" method="POST">
-      <input type="hidden" name="_method" value="delete"> 
-      <button>Logout</button>
-    </form>
+        <input type="hidden" name="_method" value="delete"> 
+        <button>Logout</button>
+      </form>
+  </ul>
+  </div>
 
-    <a href="/work_orders/new">Add work_order item</a>
-  </section>
+  <div class="back">
+    <div></div>
+  </div>
 
-  <section class="work_orders">
-    <% client_work_orders.each do |work_order| %>
-      <section class="work_order">
-        <header>
-          <h2><%= work_order['name'] %></h2>
-          
-          <p><%= work_order['description'] %></p>
+  <div class="mid">
+    <img src="https://i.imgur.com/LnVAmI0.png" alt="" class="logo">
+    <h1 class="main">IN LIGHT Home Maintenance</h1>
+    <p>Achieving your goals</p>
+    <div class="btn">
+      <a class="simple" href="#">Enquire</a>
+      <a class="border" href="#">Learn More</a>
+    </div>
+  </div>
 
-          <section class="controls">
-            <a href="/work_orders/<%= work_order['id'] %>/edit">Edit</a>
+  <div class="details">
+    <div class="one">
+      <h3>Who we are</h3>
+      <h6>Your local South Aussie handyman.</h6>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, molestias voluptatum quia accusantium rerum ad maxime ut sequi soluta, error a architecto sed exercitationem? Eveniet quod illum dolore sed laborum.</p>
+      <a href="#">Get a quote</a>
+    </div>
 
-            <form action="/work_orders/<%= work_order['id'] %>" method="POST">
-              <input type="hidden" name="_method" value="delete">
-              <button>Delete</button>
-            </form>
-          </section>
-        </header>
-
-        <img src="<%= work_order['image_url'] %>" alt="">
-      </section>
-    <% end %>
-  </section>
+    <div class="two">
+      <h3>Contact hours</h3>
+      <h5>Sunday: Closed</h5>
+      <h5>Monday - Friday</h5>
+      <p>9:00am - 6:00pm</p>
+    </div>
+  </div>
 <% else %>
 
 <div class="nav">
@@ -41,11 +49,6 @@
     <li><a href="/users/new">Sign up</a></li>
   </ul>
 </div>
-
-<%# <header>
-  <img src="https://i.imgur.com/LnVAmI0.png" alt="" class="logo">
-  <h1 class="main">IN LIGHT Home Maintenance</h1>
-</header> %>
 
 <div class="back">
   <div></div>
@@ -76,6 +79,4 @@
     <p>9:00am - 6:00pm</p>
   </div>
 </div>
-  
-  
 <% end %>

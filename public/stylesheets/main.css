@@ -105,6 +105,9 @@ header {
 .mid_login {
     color: #0174b7;
 }
+.mid_login .main {
+    font-size: 3rem;
+}
 
 .mid p {
     color: #b2b2b2;
@@ -229,6 +232,11 @@ header {
     color: rgb(158, 37, 37);
 }
 
+.attachments {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
 
 
 
