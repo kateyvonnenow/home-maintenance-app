@@ -10,3 +10,4 @@ get '/admin' do
         all_users: all_users
     }
 end
+

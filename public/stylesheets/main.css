@@ -291,6 +291,7 @@ header {
 
 .enquiries .one {
     width: 30%;
+    padding-right: 5%;
 }
 
 .enquiries .one .work_order_dir .work_orders_list {
@@ -349,6 +350,16 @@ header {
     border-radius: 20px;
     border: none;
     cursor: pointer;
+}
+
+.admin_page {
+    max-width: 70%;
+    padding-top: 100px;
+}
+
+.quotes_page_animation {
+    padding-top: 300px;
+    max-width: 70%;
 }
 
 
