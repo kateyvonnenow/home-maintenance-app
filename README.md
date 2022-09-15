@@ -22,7 +22,8 @@ In the initial stage I made a visual map/diagram for developing the app. However
 - Ruby + PostgreSQL + Sinatra + Heroku + HTML + CSS
 
 ## :scream: bugs to fix :shit:
-- Major security bug
+- Major security bug where administrator's session id switches to user session id.
+- Final push to heroku messed up once logged in.
 
 ## :sob: Lessons learnt
 - Things don't always pan out as it was originally planned
