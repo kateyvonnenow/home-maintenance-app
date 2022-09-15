@@ -29,6 +29,6 @@ In the initial stage I made a visual map/diagram for developing the app. However
 
 ## :white_check_mark: Future features
 - Job tracker implementation 
-- File uplaod system
+- File upload system
 - Direct messaging
 
