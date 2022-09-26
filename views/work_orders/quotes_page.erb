@@ -46,32 +46,36 @@
     </div>
 
     <div class="two">
-    <h1>Your Enquiries</h1>
-    <% if client_work_orders.to_a.length > 0 %>
-      <% client_work_orders.each do |work_order| %>
-        <div id="<% work_order['name'].to_s %>" class="work_order_preview">
-          <h2><%= work_order['name'] %></h2>
-          
-          <section class="controls">
-            <a href="/work_orders/<%= work_order['id'] %>/edit">Edit Enquiry</a>
-            <form action="/work_orders/<%= work_order['id'] %>" method="POST">
-              <input type="hidden" name="_method" value="delete">
-              <button>Delete</button>
-            </form>
-          </section>
 
-          <p>Status: <%= work_order['job_status'] %></p>
+      <h1>Your Enquiries</h1>
 
-          <div class="work_order_detail">
-            <p><%= work_order['description'] %></p>
-            <img src="<%= work_order['image_url'] %>" alt="" class="attachments">
-          </div>
-          <hr>
-        </div>
-      <% end %>
-      <% else %>
-        <p>No current enquiries. Create one to preview.</p>
-      <% end %>
+      <% if client_work_orders.to_a.length > 0 %>
+        <table>
+          <tr>
+            <th>Enquiry ID</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        <% client_work_orders.each do |work_order| %>
+          <tr>
+            <td><%= work_order['id'] %></td>
+            <td><%= work_order['name'] %></td>
+            <td><%= work_order['job_status'] %></td>
+            <td><%= work_order['time_stamp'].split(' ')[0].split('-').reverse().join('-') %></td>
+            <td><a href="/work_orders/<%= work_order['id'] %>/edit">Edit</a></td>
+            <td><form action="/work_orders/<%= work_order['id'] %>" method="POST">
+                <input type="hidden" name="_method" value="delete">
+                <button>Withdraw</button></td>
+          </tr>
+        <% end %>
+        </table>
+            
+        <% else %>
+          <p>No current enquiries. Create one to preview.</p>
+        <% end %>
     </div>
   </div>
 <% else %>

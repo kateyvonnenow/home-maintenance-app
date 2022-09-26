@@ -362,6 +362,51 @@ header {
     max-width: 60%;
 }
 
+table {
+    width: 800px;
+}
+
+th {
+    text-align: left;
+    background-color: #478fb9;
+    color: white;
+}
+
+table, th, td {
+    border: 1px solid rgb(255, 255, 255);
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+}
+
+td {
+    background-color: #efefef;
+}
+
+table button {
+    padding: 0.5rem;
+    color: #fff;
+    background-color: #70848f;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+table a {
+    padding: 0.5rem;
+    color: #fff;
+    background-color: #478fb9;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+
 
 
 

@@ -22,3 +22,5 @@ end
 def delete_work_order(id)
     run_sql("DELETE FROM work_orders WHERE id = $1", [id])
 end
+
+# def set_status_work_order(id, )

@@ -7,7 +7,6 @@ get '/quotes/home' do
     redirect = redirect
   
     erb :'work_orders/quotes_page', locals: {
-        all_work_orders: all_work_orders,
         client_work_orders: client_work_orders,
         redirect: redirect
     }

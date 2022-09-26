@@ -1,0 +1,108 @@
+<% if logged_in?%>
+    <div class="nav">
+      <img src="https://i.imgur.com/1eT9WvY.png" alt="" id="logo">
+      <ul id="item">
+        <li><a href="/">Home</a></li>
+        
+        <form action="/sessions" method="POST">
+            <input type="hidden" name="_method" value="delete"> 
+            <button>Logout</button>
+          </form>
+      </ul>
+    </div>
+  
+    <div class="back_login">
+      <div></div>
+    </div>
+  
+    <div class="mid mid_login">
+      <img src="https://cdn.dribbble.com/users/2085072/screenshots/4963880/routine-maintenance-2.gif" alt="" class="quotes_page_animation">
+      <h1 class="main">Welcome to your profile, <%= current_user['first_name'] %>!</h1>
+      <p>Here, you can manage all the enquiries you have made with us online! Whatever you need done, no job is too big or too small.</p>
+      <br>
+    </div>
+  
+    <div class="details">
+      <div class="one">
+        <h3>Enquiries</h3>
+        <h6>Submit a live enquiry that tracks every stage of the job for you. Beginning from the moment you click submit, until the moment the job is fixed.</h6>
+        <a href="/work_orders/new">Create Enquiry</a>
+      </div>
+  
+      <div class="two">
+        
+      </div>
+    </div>
+  
+    <div class="enquiries">
+  
+      <div class="one">
+        <h3>Directory of enquiries</h3>
+        <ul class="work_order_dir">
+        <% client_work_orders.each do |work_order| %>
+          <li><a href="#<%= work_order['name'] %>" class="work_orders_list"><%= work_order['name'] %></a></li>
+        <% end %>
+        </ul>
+      </div>
+  
+      <div class="two">
+  
+      <h1>Your Enquiries</h1>
+  
+      <% if client_work_orders.to_a.length > 0 %>
+        <table>
+          <tr>
+            <th>Enquiry ID</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        <% client_work_orders.each do |work_order| %>
+          <tr>
+            <td><%= work_order['id'] %></td>
+            <td><%= work_order['name'] %></td>
+            <td><%= work_order['job_status'] %></td>
+            <td><%= work_order['time_stamp'].split(' ')[0].split('-') %></td>
+            <td><a href="/work_orders/<%= work_order['id'] %>/edit">Edit Enquiry</a></td>
+            <td><form action="/work_orders/<%= work_order['id'] %>" method="POST">
+                <input type="hidden" name="_method" value="delete">
+                <button>Withdraw</button></td>
+          </tr>
+        <% end %>
+        </table>
+            
+  
+  
+        <% client_work_orders.each do |work_order| %>
+          <div id="<% work_order['name'].to_s %>" class="work_order_preview">
+            <h2><%= work_order['name'] %></h2>
+  
+            <p><%= work_order['job_status'] %> - <%= work_order['time_stamp'] %></p>
+  
+            <div class="work_order_detail">
+              <p><%= work_order['description'] %></p>
+              <img src="<%= work_order['image_url'] %>" alt="" class="attachments">
+            </div>
+  
+            <section class="controls">
+              <a href="/work_orders/<%= work_order['id'] %>/edit">Edit Enquiry</a>
+  
+              <form action="/work_orders/<%= work_order['id'] %>" method="POST">
+                <input type="hidden" name="_method" value="delete">
+                <button>Withdraw</button>
+              </form>
+            </section>
+  
+            <hr>
+          </div>
+        <% end %>
+        <% else %>
+          <p>No current enquiries. Create one to preview.</p>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <% redirect '/' %>
+  <% end %>
