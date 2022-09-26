@@ -195,11 +195,14 @@ header {
     width: 45%;
     border-left: 1px solid #fff;
     padding-left: 5%;
+    color: #fff;
 }
 
 .details .two p{
     color: #fff;
 }
+
+
 
 .details_create_enquiry {
     max-width: 100%;
@@ -310,7 +313,7 @@ header {
 
 .enquiries .two {
     width: 60%;
-    border-left: 1px solid black;
+    /* border-left: 1px solid black; */
     padding-left: 10%;
 }
 
